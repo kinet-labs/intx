@@ -442,15 +442,19 @@ TEST(div, reciprocal)
     constexpr auto d_start = uint64_t{1} << 63;
     for (uint64_t d = d_start; d < d_start + n; ++d)
     {
-        auto v = reciprocal_2by1(d);
-        ASSERT_EQ(v, reciprocal_naive(d)) << d;
+        const auto expected = reciprocal_builtin_uint128(d);
+        ASSERT_EQ(reciprocal_2by1(d), expected) << d;
+        ASSERT_EQ(reciprocal_native(d), expected) << d;
+        ASSERT_EQ(reciprocal_gmp(d), expected) << d;
     }
 
     constexpr auto d_end = ~uint64_t{0};
     for (uint64_t d = d_end; d > d_end - n; --d)
     {
-        auto v = reciprocal_2by1(d);
-        ASSERT_EQ(v, reciprocal_naive(d)) << d;
+        const auto expected = reciprocal_builtin_uint128(d);
+        ASSERT_EQ(reciprocal_2by1(d), expected) << d;
+        ASSERT_EQ(reciprocal_native(d), expected) << d;
+        ASSERT_EQ(reciprocal_gmp(d), expected) << d;
     }
 }
 

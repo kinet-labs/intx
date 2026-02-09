@@ -75,6 +75,12 @@ commands:
             cmake --build ~/build --parallel
             cmake --build ~/build --target package
       - run:
+          name: "Benchmark"
+          working_directory: ~/build
+          command: |
+            cat /proc/cpuinfo
+            test/intx-bench --benchmark_repetitions=11 --benchmark_filter=reciprocal
+      - run:
           name: "Test"
           working_directory: ~/build
           command: |
