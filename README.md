@@ -1,3 +1,15 @@
+## Kinet Fork
+
+This is a Kinet Industries fork of the canonical upstream:
+- **Upstream**: https://github.com/chfast/intx
+- **Pinned commit**: `dada8df`
+- **Pinned tag**: `v0.15.0`
+- **License**: Apache-2.0 (preserved from upstream — see `LICENSE`, modifications log in `NOTICE`)
+- **LuKinetx extensions**: NONE (verbatim parity with upstream). Header-only extended-precision integer C++ library used by `kinet-labs/crypto` for Montgomery arithmetic in `bn254/`, `secp256r1/`, `modexp/`, `evm256/`, `kzg/`.
+- **Tag policy**: track upstream semver verbatim. Divergence (if ever required) signaled by next-minor bump, NOT prerelease suffixes.
+
+---
+
 # intx
 
 [![readme style: standard][readme style standard badge]][standard readme]
@@ -17,6 +29,12 @@ To build, test or benchmark.
 ```bash
 git clone https://github.com/chfast/intx
 cd intx
+
+
+sudo apt -q update
+
+sudo apt install -qy libgmp-dev
+
 
 cmake -B build -DCMAKE_BUILD_TYPE=Release
 cmake --build build --parallel

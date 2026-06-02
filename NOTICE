@@ -1,0 +1,12 @@
+intx
+Copyright 2019 Pawel Bylica
+
+Licensed under the Apache License, Version 2.0 (the "License").
+You may obtain a copy of the License at:
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Modifications by Kinet Industries (2025-2026): none — verbatim fork.
+
+Upstream: https://github.com/chfast/intx
+Pinned tag: v0.15.0
